@@ -1,0 +1,71 @@
+# Configurações para favicons no Hostgator
+<IfModule mod_mime.c>
+    AddType image/x-icon .ico
+    AddType image/svg+xml .svg
+    AddType image/png .png
+</IfModule>
+
+# Cache para favicons e imagens
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # Favicons - cache longo
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/png "access plus 1 month"
+    
+    # Outros arquivos
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+</IfModule>
+
+# Headers para favicons
+<IfModule mod_headers.c>
+    <FilesMatch "\.(ico|svg|png)$">
+        Header set Cache-Control "public, max-age=31536000"
+        Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
+    
+    # Headers específicos para favicon.ico
+    <Files "favicon.ico">
+        Header set Content-Type "image/x-icon"
+        Header set Cache-Control "public, max-age=31536000"
+    </Files>
+</IfModule>
+
+# Redirecionamento para favicon.ico na raiz (fallback)
+RewriteEngine On
+
+# Força HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Redirecionamento para favicon.ico na raiz
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^favicon\.ico$ /images/favicon.ico [L]
+
+# Redirecionamento para apple-touch-icon
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^apple-touch-icon\.png$ /images/favicon-192x192.svg [L]
+
+# Compressão GZIP
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule>
+
+# Segurança
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options DENY
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule> 

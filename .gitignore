@@ -1,0 +1,40 @@
+# Node.js
+node_modules/
+
+# Next.js build
+.next/
+
+# Static export
+out/
+
+# Hostgator export
+hostgator-ready/
+blackfy-site-hostgator.zip
+
+# MacOS
+.DS_Store
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Env files
+.env*
+
+# Editor folders
+.vscode/
+.idea/
+
+# Test coverage
+coverage/
+
+# System
+Thumbs.db
+
+# Outros arquivos temporários
+*.swp
+*.swo
+
+# Manter apenas arquivos necessários para rodar e exportar
+# (src, public, scripts, configs, docs, package.json, tsconfig.json, etc) 
