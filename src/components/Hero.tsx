@@ -10,13 +10,13 @@ import { useTranslation } from '@/contexts/LanguageContext'
 interface HeroProps {
   hideDownloadButton?: boolean
   cta?: React.ReactNode
-  showVideoButton?: boolean // NOVA PROP
+  showVideoButton?: boolean
 }
 
 export default function Hero({ hideDownloadButton, cta, showVideoButton = true }: HeroProps) {
   const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
   const { t, lang, mounted } = useTranslation()
-  
+
   const scrollToVideo = () => {
     const element = document.getElementById('video')
     if (element) {
@@ -25,7 +25,7 @@ export default function Hero({ hideDownloadButton, cta, showVideoButton = true }
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+    <section className="relative min-h-full mt-32 flex items-center justify-center overflow-hidden bg-black">
       {/* Animated background particles */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-4 -right-4 w-72 h-72 bg-white/20 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
@@ -87,16 +87,16 @@ export default function Hero({ hideDownloadButton, cta, showVideoButton = true }
             className="flex flex-col sm:flex-row gap-2 justify-center items-center"
           >
             {showVideoButton && lang === 'pt' && mounted && (
-            <button
-              onClick={scrollToVideo}
-              className="btn btn-primary btn-lg animate-pulse-glow"
-            >
+              <button
+                onClick={scrollToVideo}
+                className="btn btn-primary btn-lg animate-pulse-glow"
+              >
                 {t('cta_video')}
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </button>
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </button>
             )}
             {!hideDownloadButton && (
-              <button 
+              <button
                 onClick={() => setIsDownloadModalOpen(true)}
                 className="btn btn-outline btn-lg"
               >
@@ -123,11 +123,12 @@ export default function Hero({ hideDownloadButton, cta, showVideoButton = true }
               <span>{t('encryption')}</span>
             </div>
           </motion.div>
+
         </div>
       </div>
 
       {/* Download Modal */}
-      <DownloadModal 
+      <DownloadModal
         isOpen={isDownloadModalOpen}
         onClose={() => setIsDownloadModalOpen(false)}
       />

@@ -15,7 +15,7 @@ export default function ThankYouPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
       <Header hideDownloadButton hideMenuItems />
-      
+
       <main className="pt-20 pb-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Section */}
@@ -56,7 +56,7 @@ export default function ThankYouPage() {
             >
               <button
                 onClick={() => setShowDownloadModal(true)}
-                className="group bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-lg"
+                className="group bg-white text-black font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-lg"
               >
                 <div className="flex items-center space-x-3">
                   <Download className="w-6 h-6" />

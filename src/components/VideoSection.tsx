@@ -9,7 +9,7 @@ import { useState } from 'react'
 export default function VideoSection() {
   const { lang, t } = useTranslation()
   const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
-  
+
   // Só exibe o vídeo para português
   if (lang !== 'pt') {
     return null

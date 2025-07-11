@@ -312,7 +312,7 @@ export default function PricingPlans() {
               >
                 {plan.highlight && (
                   <span className={`absolute -top-5 left-1/2 -translate-x-1/2 font-bold px-2 md:px-4 py-1 rounded-full shadow-lg border-2 whitespace-nowrap
-                    ${isStandard ? 'bg-[#FBBF24] text-black border-[#FBBF24]' : 'bg-white text-black border-white'} text-[10px] md:text-xs`}
+                    ${isStandard ? 'bg-emerald-600 text-white border-emerald-600' : 'bg-white text-black border-white'} text-[10px] md:text-xs`}
                   >
                     {t('most_sold')}
                   </span>
@@ -336,8 +336,8 @@ export default function PricingPlans() {
                     // Para português anual, já existe lógica de priceSuffix
                     if (period === 'anual' && lang === 'pt' && priceSuffix) {
                       return <>
-                  {priceValue}
-                    <span className={`ml-1 text-xs md:text-sm font-normal ${isStandard ? 'text-black' : 'text-white'}`}>{priceSuffix}</span>
+                        {priceValue}
+                        <span className={`ml-1 text-xs md:text-sm font-normal ${isStandard ? 'text-black' : 'text-white'}`}>{priceSuffix}</span>
                       </>
                     }
                     // Para outros idiomas, detectar e estilizar o sufixo '/month' ou equivalente
@@ -407,7 +407,7 @@ export default function PricingPlans() {
                       </button>
                       <h4 className={`text-base md:text-lg font-bold mb-4 text-center ${isStandard ? 'text-black' : 'text-white'}`}>{t('modal_what_includes')} {plan.name}?</h4>
                       <ul className="space-y-1 md:space-y-2 text-xs md:text-sm">
-                        {(plan.features as {label: string; included: boolean}[]).map(f => (
+                        {(plan.features as { label: string; included: boolean }[]).map(f => (
                           <li
                             key={f.label}
                             className={`flex items-center text-sm ${f.included ? (isStandard ? 'text-black' : 'text-gray-200') : (isStandard ? 'text-gray-400' : 'text-gray-500')}`}
