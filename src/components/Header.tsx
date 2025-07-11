@@ -12,9 +12,11 @@ import React from 'react'
 interface HeaderProps {
   hideDownloadButton?: boolean
   showPlansButton?: boolean
+  hideMenuItems?: boolean
+  disableLogoLink?: boolean
 }
 
-export default function Header({ hideDownloadButton, showPlansButton = false }: HeaderProps) {
+export default function Header({ hideDownloadButton, showPlansButton = false, hideMenuItems = false, disableLogoLink = false }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
@@ -45,57 +47,73 @@ export default function Header({ hideDownloadButton, showPlansButton = false }: 
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <Link href="/">
-              <div className="w-36 h-12 flex items-center relative cursor-pointer">
-              <Image
-                src="/images/logotipo.png"
-                alt="Blackfy Logo"
-                width={144}
+            {disableLogoLink ? (
+              <div className="w-36 h-12 flex items-center relative select-none cursor-default">
+                <Image
+                  src="/images/logotipo.png"
+                  alt="Blackfy Logo"
+                  width={144}
                   height={48}
                   className="rounded-lg object-contain"
-              />
-            </div>
-            </Link>
+                />
+              </div>
+            ) : (
+              <Link href="/">
+                <div className="w-36 h-12 flex items-center relative cursor-pointer">
+                  <Image
+                    src="/images/logotipo.png"
+                    alt="Blackfy Logo"
+                    width={144}
+                    height={48}
+                    className="rounded-lg object-contain"
+                  />
+                </div>
+              </Link>
+            )}
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <button
-              onClick={() => scrollToSection('recursos')}
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              {t('nav_features')}
-            </button>
-            <button
-              onClick={() => scrollToSection('video')}
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              {t('nav_demo')}
-            </button>
-            <button
-              onClick={() => scrollToSection('beneficios')}
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              {t('nav_benefits')}
-            </button>
-            {showPlansButton && (
-              <button
-                onClick={() => {
-                  const el = document.getElementById('planos');
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="text-white hover:text-amber-400 transition-colors font-semibold"
-                type="button"
-              >
-                {t('nav_plans')}
-              </button>
+            {!hideMenuItems && (
+              <>
+                <button
+                  onClick={() => scrollToSection('recursos')}
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  {t('nav_features')}
+                </button>
+                <button
+                  onClick={() => scrollToSection('video')}
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  {t('nav_demo')}
+                </button>
+                <button
+                  onClick={() => scrollToSection('beneficios')}
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  {t('nav_benefits')}
+                </button>
+                {showPlansButton && (
+                  <button
+                    onClick={() => {
+                      const el = document.getElementById('planos');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="text-white hover:text-amber-400 transition-colors font-semibold"
+                    type="button"
+                  >
+                    {t('nav_plans')}
+                  </button>
+                )}
+                <button
+                  onClick={() => scrollToSection('faq')}
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  {t('nav_faq')}
+                </button>
+              </>
             )}
-            <button
-              onClick={() => scrollToSection('faq')}
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              {t('nav_faq')}
-            </button>
             {!hideDownloadButton && (
               <button 
                 onClick={() => setIsDownloadModalOpen(true)}
@@ -130,41 +148,43 @@ export default function Header({ hideDownloadButton, showPlansButton = false }: 
           >
             <div className="container mx-auto px-4 py-4 flex flex-col items-end">
               <nav className="flex flex-col space-y-4 items-end w-full">
-                <button
-                  onClick={() => scrollToSection('recursos')}
-                  className="text-gray-300 hover:text-white transition-colors text-right w-full"
-                >
-                  {t('nav_features')}
-                </button>
-                <button
-                  onClick={() => scrollToSection('video')}
-                  className="text-gray-300 hover:text-white transition-colors text-right w-full"
-                >
-                  {t('nav_demo')}
-                </button>
-                <button
-                  onClick={() => scrollToSection('beneficios')}
-                  className="text-gray-300 hover:text-white transition-colors text-right w-full"
-                >
-                  {t('nav_benefits')}
-                </button>
-                {showPlansButton && (
+                {!hideMenuItems && <>
                   <button
-                    onClick={() => {
-                      const el = document.getElementById('planos');
-                      if (el) el.scrollIntoView({ behavior: 'smooth' });
-                    }}
+                    onClick={() => scrollToSection('recursos')}
                     className="text-gray-300 hover:text-white transition-colors text-right w-full"
                   >
-                    {t('nav_plans')}
+                    {t('nav_features')}
                   </button>
-                )}
-                <button
-                  onClick={() => scrollToSection('faq')}
-                  className="text-gray-300 hover:text-white transition-colors text-right w-full"
-                >
-                  {t('nav_faq')}
-                </button>
+                  <button
+                    onClick={() => scrollToSection('video')}
+                    className="text-gray-300 hover:text-white transition-colors text-right w-full"
+                  >
+                    {t('nav_demo')}
+                  </button>
+                  <button
+                    onClick={() => scrollToSection('beneficios')}
+                    className="text-gray-300 hover:text-white transition-colors text-right w-full"
+                  >
+                    {t('nav_benefits')}
+                  </button>
+                  {showPlansButton && (
+                    <button
+                      onClick={() => {
+                        const el = document.getElementById('planos');
+                        if (el) el.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                      className="text-gray-300 hover:text-white transition-colors text-right w-full"
+                    >
+                      {t('nav_plans')}
+                    </button>
+                  )}
+                  <button
+                    onClick={() => scrollToSection('faq')}
+                    className="text-gray-300 hover:text-white transition-colors text-right w-full"
+                  >
+                    {t('nav_faq')}
+                  </button>
+                </>}
                 {!hideDownloadButton && (
                   <button 
                     onClick={() => setIsDownloadModalOpen(true)}

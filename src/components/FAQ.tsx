@@ -9,9 +9,9 @@ import { useTranslation } from '@/contexts/LanguageContext'
 const faqs = [
   { question: 'faq_q0', answer: 'faq_a0' },
   ...Array.from({ length: 10 }, (_, i) => ({
-    question: `faq_q${i+1}`,
-    answer: `faq_a${i+1}`
-  }))
+  question: `faq_q${i+1}`,
+  answer: `faq_a${i+1}`
+}))
 ]
 
 export default function FAQ() {

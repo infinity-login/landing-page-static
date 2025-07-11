@@ -87,13 +87,13 @@ export default function Hero({ hideDownloadButton, cta, showVideoButton = true }
             className="flex flex-col sm:flex-row gap-2 justify-center items-center"
           >
             {showVideoButton && lang === 'pt' && mounted && (
-              <button
-                onClick={scrollToVideo}
-                className="btn btn-primary btn-lg animate-pulse-glow"
-              >
+            <button
+              onClick={scrollToVideo}
+              className="btn btn-primary btn-lg animate-pulse-glow"
+            >
                 {t('cta_video')}
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </button>
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </button>
             )}
             {!hideDownloadButton && (
               <button 

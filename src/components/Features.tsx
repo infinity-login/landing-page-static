@@ -118,7 +118,7 @@ export default function Features() {
                 ) : feature.customIcon ? (
                     <Image src="/images/Logoambar.svg" alt="Blackfy" width={40} height={40} className="mb-4" style={{ filter: 'none' }} />
                 ) : (
-                    feature.icon && <feature.icon className="w-10 h-10 text-amber-400 mb-4" />
+                  feature.icon && <feature.icon className="w-10 h-10 text-amber-400 mb-4" />
                 )}
                 <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
                 <p className="text-gray-300 text-sm">{feature.description}</p>

@@ -31,7 +31,7 @@ export default function Pricing() {
   
   return (
     <div className="min-h-screen bg-black">
-      <Header hideDownloadButton showPlansButton={true} />
+      <Header hideDownloadButton showPlansButton={true} disableLogoLink />
       <Hero cta={<ScrollToPlansButton />} hideDownloadButton showVideoButton={true} />
       <VideoSection />
       <Features />

@@ -336,8 +336,8 @@ export default function PricingPlans() {
                     // Para português anual, já existe lógica de priceSuffix
                     if (period === 'anual' && lang === 'pt' && priceSuffix) {
                       return <>
-                        {priceValue}
-                        <span className={`ml-1 text-xs md:text-sm font-normal ${isStandard ? 'text-black' : 'text-white'}`}>{priceSuffix}</span>
+                  {priceValue}
+                    <span className={`ml-1 text-xs md:text-sm font-normal ${isStandard ? 'text-black' : 'text-white'}`}>{priceSuffix}</span>
                       </>
                     }
                     // Para outros idiomas, detectar e estilizar o sufixo '/month' ou equivalente

@@ -44,7 +44,7 @@ export default function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            className="fixed top-0 left-0 w-screen h-screen z-50 flex items-start justify-center overflow-y-auto pt-16 md:pt-32 p-4"
           >
             <div className="bg-black border border-white/20 rounded-xl p-8 max-w-md w-full backdrop-blur-sm">
               {/* Header */}

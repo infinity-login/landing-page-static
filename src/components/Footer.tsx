@@ -46,37 +46,37 @@ export default function Footer() {
 
           {/* Produto */}
           {!(isThankYouPage || isInfoPage) && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="space-y-4 md:col-start-2 md:col-end-3 md:order-2 md:justify-self-end"
-            >
-              <h3 className="text-lg font-semibold text-white">{t('footer_product')}</h3>
-              <ul className="space-y-2">
-                <li>
-                  <a href="#recursos" className="text-gray-300 hover:text-white transition-colors text-sm">
-                    {t('footer_link_features')}
-                  </a>
-                </li>
-                <li>
-                  <a href="#beneficios" className="text-gray-300 hover:text-white transition-colors text-sm">
-                    {t('footer_link_benefits')}
-                  </a>
-                </li>
-                <li>
-                  <a href="#video" className="text-gray-300 hover:text-white transition-colors text-sm">
-                    {t('footer_link_demo')}
-                  </a>
-                </li>
-                <li>
-                  <a href="#faq" className="text-gray-300 hover:text-white transition-colors text-sm">
-                    {t('footer_link_faq')}
-                  </a>
-                </li>
-              </ul>
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="space-y-4 md:col-start-2 md:col-end-3 md:order-2 md:justify-self-end"
+          >
+            <h3 className="text-lg font-semibold text-white">{t('footer_product')}</h3>
+            <ul className="space-y-2">
+              <li>
+                <a href="#recursos" className="text-gray-300 hover:text-white transition-colors text-sm">
+                  {t('footer_link_features')}
+                </a>
+              </li>
+              <li>
+                <a href="#beneficios" className="text-gray-300 hover:text-white transition-colors text-sm">
+                  {t('footer_link_benefits')}
+                </a>
+              </li>
+              <li>
+                <a href="#video" className="text-gray-300 hover:text-white transition-colors text-sm">
+                  {t('footer_link_demo')}
+                </a>
+              </li>
+              <li>
+                <a href="#faq" className="text-gray-300 hover:text-white transition-colors text-sm">
+                  {t('footer_link_faq')}
+                </a>
+              </li>
+            </ul>
+          </motion.div>
           )}
 
           {/* Contato */}

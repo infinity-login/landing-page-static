@@ -350,5 +350,15 @@
   "testimonial_2_content": "A interface é super intuitiva e o suporte é excelente. Nunca mais tive problemas com bloqueios em redes sociais. Vale cada centavo!",
   "testimonial_3_name": "João Oliveira",
   "testimonial_3_role": "Empreendedor Digital",
-  "testimonial_3_content": "Economizei horas do meu dia com a automação de tarefas e a gestão de perfis. O melhor investimento para quem trabalha online!"
+  "testimonial_3_content": "Economizei horas do meu dia com a automação de tarefas e a gestão de perfis. O melhor investimento para quem trabalha online!",
+  "download_modal_title": "Baixar Blackfy Login",
+  "download_modal_choose_version": "Escolha a versão compatível com seu sistema operacional",
+  "download_modal_windows_version": "Windows 10/11 (64-bit)",
+  "download_modal_mac_version": "macOS 12+ (Apple Silicon)",
+  "download_modal_requirements_title": "Requisitos do sistema",
+  "download_modal_req_os": "Windows 10/11 (64-bit) ou macOS 12+",
+  "download_modal_req_ram": "4GB de RAM mínimo (8GB recomendado)",
+  "download_modal_req_disk": "2GB de espaço em disco",
+  "download_modal_req_internet": "Conexão com a internet",
+  "download_modal_note": "O download começará automaticamente. Se não iniciar, clique no botão novamente."
 } 

@@ -3,9 +3,12 @@
 import { motion } from 'framer-motion'
 import { Play, Users, Clock, Star } from 'lucide-react'
 import { useTranslation } from '@/contexts/LanguageContext'
+import DownloadModal from './DownloadModal'
+import { useState } from 'react'
 
 export default function VideoSection() {
   const { lang, t } = useTranslation()
+  const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
   
   // Só exibe o vídeo para português
   if (lang !== 'pt') {
@@ -99,12 +102,13 @@ export default function VideoSection() {
             <p className="text-gray-300 mb-6">
               Baixe agora e descubra a liberdade de navegar com total privacidade
             </p>
-            <button className="btn btn-primary btn-lg animate-pulse-glow">
-              Baixar Agora
+            <button className="btn btn-primary btn-lg animate-pulse-glow" onClick={() => setIsDownloadModalOpen(true)}>
+              {t('cta_download')}
             </button>
           </motion.div>
         </div>
       </div>
+      <DownloadModal isOpen={isDownloadModalOpen} onClose={() => setIsDownloadModalOpen(false)} />
     </section>
   )
 } 
