@@ -20,13 +20,13 @@ export default function Header({ hideDownloadButton, showPlansButton = false, hi
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
-  const { t } = useTranslation()
+  const { t, lang } = useTranslation()
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
     }
-    
+
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -40,9 +40,8 @@ export default function Header({ hideDownloadButton, showPlansButton = false, hi
   }
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'backdrop-blur-glass border-b border-border/10' : 'bg-transparent'
-    }`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'backdrop-blur-glass border-b border-border/10' : 'bg-transparent'
+      }`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -82,12 +81,14 @@ export default function Header({ hideDownloadButton, showPlansButton = false, hi
                 >
                   {t('nav_features')}
                 </button>
-                <button
-                  onClick={() => scrollToSection('video')}
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  {t('nav_demo')}
-                </button>
+                {lang === 'pt' && (
+                  <button
+                    onClick={() => scrollToSection('video')}
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    {t('nav_demo')}
+                  </button>
+                )}
                 <button
                   onClick={() => scrollToSection('beneficios')}
                   className="text-gray-300 hover:text-white transition-colors"
@@ -115,7 +116,7 @@ export default function Header({ hideDownloadButton, showPlansButton = false, hi
               </>
             )}
             {!hideDownloadButton && (
-              <button 
+              <button
                 onClick={() => setIsDownloadModalOpen(true)}
                 className="btn btn-primary"
               >
@@ -155,12 +156,14 @@ export default function Header({ hideDownloadButton, showPlansButton = false, hi
                   >
                     {t('nav_features')}
                   </button>
-                  <button
-                    onClick={() => scrollToSection('video')}
-                    className="text-gray-300 hover:text-white transition-colors text-right w-full"
-                  >
-                    {t('nav_demo')}
-                  </button>
+                  {lang === 'pt' && (
+                    <button
+                      onClick={() => scrollToSection('video')}
+                      className="text-gray-300 hover:text-white transition-colors text-right w-full"
+                    >
+                      {t('nav_demo')}
+                    </button>
+                  )}
                   <button
                     onClick={() => scrollToSection('beneficios')}
                     className="text-gray-300 hover:text-white transition-colors text-right w-full"
@@ -186,7 +189,7 @@ export default function Header({ hideDownloadButton, showPlansButton = false, hi
                   </button>
                 </>}
                 {!hideDownloadButton && (
-                  <button 
+                  <button
                     onClick={() => setIsDownloadModalOpen(true)}
                     className="btn btn-primary justify-end w-full"
                   >
@@ -201,15 +204,15 @@ export default function Header({ hideDownloadButton, showPlansButton = false, hi
           </motion.div>
         )}
       </AnimatePresence>
-      
+
       {/* Download Modal */}
-      <DownloadModal 
+      <DownloadModal
         isOpen={isDownloadModalOpen}
         onClose={() => setIsDownloadModalOpen(false)}
       />
     </header>
   )
-} 
+}
 
 // Dropdown de idioma
 function LanguageDropdown() {

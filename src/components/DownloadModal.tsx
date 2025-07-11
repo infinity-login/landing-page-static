@@ -14,13 +14,13 @@ export default function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
   const handleDownload = (platform: 'windows' | 'mac') => {
     // Aqui você pode adicionar a lógica de download real
     console.log(`Downloading for ${platform}`)
-    
+
     // Links de download reais
     const downloadUrls = {
       windows: 'https://blackfy-login.s3.us-east-1.amazonaws.com/win/BlackfyLogin.exe',
       mac: 'https://blackfy-login.s3.us-east-1.amazonaws.com/mac_silicon/BlackfyLogin.zip'
     }
-    
+
     window.open(downloadUrls[platform], '_blank')
     onClose()
   }
@@ -37,7 +37,7 @@ export default function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
             className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50"
             onClick={onClose}
           />
-          
+
           {/* Modal */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -71,10 +71,10 @@ export default function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => handleDownload('windows')}
-                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white rounded-lg p-4 flex items-center justify-between transition-all duration-200 shadow-lg hover:shadow-xl"
+                  className="w-full bg-white text-black rounded-lg p-4 flex items-center justify-between transition-all duration-200 shadow-lg hover:shadow-xl"
                 >
                   <div className="flex items-center space-x-3">
-                    <div className="p-2 bg-white/20 rounded-lg">
+                    <div className="p-2 bg-zinc-500 text-white rounded-lg">
                       <Monitor className="w-6 h-6" />
                     </div>
                     <div className="text-left">
@@ -90,10 +90,10 @@ export default function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => handleDownload('mac')}
-                  className="w-full bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 text-white rounded-lg p-4 flex items-center justify-between transition-all duration-200 shadow-lg hover:shadow-xl"
+                  className="w-full bg-zinc-800  text-white rounded-lg p-4 flex items-center justify-between transition-all duration-200 shadow-lg hover:shadow-xl"
                 >
                   <div className="flex items-center space-x-3">
-                    <div className="p-2 bg-white/20 rounded-lg">
+                    <div className="p-2 bg-zinc-500  text-white rounded-lg">
                       <Apple className="w-6 h-6" />
                     </div>
                     <div className="text-left">
