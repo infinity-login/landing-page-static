@@ -130,6 +130,7 @@ export default function Header({ hideDownloadButton, showPlansButton = false, hi
 
           {/* Mobile menu button */}
           <button
+            aria-label="Menu"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors"
           >
