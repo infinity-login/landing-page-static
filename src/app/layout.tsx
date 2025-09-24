@@ -3,8 +3,16 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { LanguageProvider } from '@/contexts/LanguageContext'
 import FaviconSwitcher from '@/components/FaviconSwitcher'
+import CookieConsentBanner from '@/components/CookieConsentBanner'
+import ThirdPartyScripts from '@/components/ThirdPartyScripts'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['400', '700'],
+  fallback: ['system-ui', 'Segoe UI', 'Roboto', 'Arial'],
+  preload: true,
+})
 
 export const metadata: Metadata = {
   title: 'Blackfy Login - Multiplos Perfis',
@@ -35,32 +43,13 @@ export default function RootLayout({
     <html lang="pt-BR">
       <head>
         <FaviconSwitcher />
-        {/* Google Tag Manager */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KWRX7DPL');`
-          }}
-        />
-        {/* End Google Tag Manager */}
       </head>
       <body className={`${inter.className} bg-black text-white`}>
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe 
-            src="https://www.googletagmanager.com/ns.html?id=GTM-KWRX7DPL"
-            height="0" 
-            width="0" 
-            style={{display:'none',visibility:'hidden'}}
-          />
-        </noscript>
-        {/* End Google Tag Manager (noscript) */}
+        <ThirdPartyScripts />
         <LanguageProvider>
           {children}
         </LanguageProvider>
+        <CookieConsentBanner />
       </body>
     </html>
   )
