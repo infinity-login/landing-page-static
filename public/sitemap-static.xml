@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Páginas reais do Blackfy Login -->
+  <url>
+    <loc>https://login.blackfy.tech/</loc>
+    <lastmod>2025-09-24T00:00:00Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://login.blackfy.tech/pricing</loc>
+    <lastmod>2025-09-24T00:00:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://login.blackfy.tech/privacy-policy</loc>
+    <lastmod>2025-09-24T00:00:00Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://login.blackfy.tech/terms-of-service</loc>
+    <lastmod>2025-09-24T00:00:00Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://login.blackfy.tech/cookies-policy</loc>
+    <lastmod>2025-09-24T00:00:00Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://login.blackfy.tech/thank-you</loc>
+    <lastmod>2025-09-24T00:00:00Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+</urlset>

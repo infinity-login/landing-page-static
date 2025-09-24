@@ -1,18 +1,19 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { Play, Users, Clock, Star } from 'lucide-react'
-import { useTranslation } from '@/contexts/LanguageContext'
-import DownloadModal from './DownloadModal'
-import { useState } from 'react'
+import { motion } from "framer-motion";
+import { Play, Users, Clock, Star } from "lucide-react";
+import { useTranslation } from "@/contexts/LanguageContext";
+import DownloadModal from "./DownloadModal";
+import { useState } from "react";
 
 export default function VideoSection() {
-  const { lang, t } = useTranslation()
-  const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
+  const { lang, t } = useTranslation();
+  const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   // Só exibe o vídeo para português
-  if (lang !== 'pt') {
-    return null
+  if (lang !== "pt") {
+    return null;
   }
 
   return (
@@ -28,10 +29,12 @@ export default function VideoSection() {
             className="space-y-4"
           >
             <h2 className="text-3xl md:text-5xl font-bold text-white">
-              {t('video_title_1')} <span className="text-gradient">{t('video_title_2')}</span>
+              {t("video_title_1")}{" "}
+              <span className="text-gradient">{t("video_title_2")}</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Descubra como revolucionar sua navegação com nosso sistema de perfis múltiplos
+              Descubra como revolucionar sua navegação com nosso sistema de
+              perfis múltiplos
             </p>
           </motion.div>
 
@@ -43,18 +46,48 @@ export default function VideoSection() {
             viewport={{ once: true }}
             className="relative max-w-4xl mx-auto"
           >
-            <div className="gradient-border">
-              <div className="video-container rounded-lg overflow-hidden">
-                <iframe
-                  src="https://www.youtube.com/embed/JDfSNwq2jZQ?rel=0&modestbranding=1&showinfo=0"
-                  title="Blackfy Login - Demonstração Completa"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                />
-              </div>
-            </div>
+        <div className="gradient-border">
+  <div className="video-container rounded-lg overflow-hidden relative">
+    {!isPlaying ? (
+      <button
+        type="button"
+        aria-label="Reproduzir vídeo"
+        onClick={() => setIsPlaying(true)}
+        className="group absolute inset-0"
+      >
+        {/* Thumbnail */}
+        <img
+          src="https://i.ytimg.com/vi/JDfSNwq2jZQ/hqdefault.jpg"
+          alt="Prévia do vídeo"
+          className="w-full h-full object-cover"
+          loading="lazy"
+          referrerPolicy="no-referrer"
+        />
+
+        {/* Overlay escuro */}
+        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors" />
+
+        {/* Ícone Play */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/90 group-hover:bg-white text-black flex items-center justify-center shadow-lg transition-colors">
+            <Play className="w-8 h-8" />
+          </div>
+        </div>
+      </button>
+    ) : (
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/JDfSNwq2jZQ?rel=0&modestbranding=1&showinfo=0&autoplay=1"
+        title="Blackfy Login - Demonstração Completa"
+        frameBorder="0"
+        referrerPolicy="strict-origin-when-cross-origin"
+        sandbox="allow-same-origin allow-scripts allow-presentation"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+        className="w-full h-full absolute inset-0"
+      />
+    )}
+  </div>
+</div>
           </motion.div>
 
           {/* Video stats */}
@@ -100,15 +133,22 @@ export default function VideoSection() {
               Pronto para Baixar?
             </h3>
             <p className="text-gray-300 mb-6">
-              Baixe agora e descubra a liberdade de navegar com total privacidade
+              Baixe agora e descubra a liberdade de navegar com total
+              privacidade
             </p>
-            <button className="btn btn-primary btn-lg animate-pulse-glow" onClick={() => setIsDownloadModalOpen(true)}>
-              {t('cta_download')}
+            <button
+              className="btn btn-primary btn-lg animate-pulse-glow"
+              onClick={() => setIsDownloadModalOpen(true)}
+            >
+              {t("cta_download")}
             </button>
           </motion.div>
         </div>
       </div>
-      <DownloadModal isOpen={isDownloadModalOpen} onClose={() => setIsDownloadModalOpen(false)} />
+      <DownloadModal
+        isOpen={isDownloadModalOpen}
+        onClose={() => setIsDownloadModalOpen(false)}
+      />
     </section>
-  )
-} 
+  );
+}

@@ -4,6 +4,7 @@ const nextConfig = {
   swcMinify: true,
   // Enable static export only for production builds
   ...(process.env.NODE_ENV === 'production' && { output: 'export' }),
+  productionBrowserSourceMaps: true,
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -17,6 +18,26 @@ const nextConfig = {
       },
     ],
   },
+  experimental: {
+    optimizePackageImports: ['lucide-react', 'framer-motion']
+  },
+  async headers() {
+    return [
+      {
+        source: '/:path*{.woff2,.png,.svg}',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
+      {
+        source: '/manifest.json',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=86400' },
+          { key: 'Content-Type', value: 'application/manifest+json' },
+        ],
+      },
+    ]
+  }
 }
 
 module.exports = nextConfig 

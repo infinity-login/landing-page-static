@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favicon Example - Blackfy Marketplace</title>
+    
+    <!-- Favicon completo -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png" />
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    
+    <!-- Android Chrome Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+    
+    <!-- Manifest PWA -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Theme Colors -->
+    <meta name="theme-color" content="#000000" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="msapplication-TileImage" content="/favicon-192x192.png" />
+    
+    <!-- Preconnect para performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+    
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .section {
+            background: #111;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+        
+        .section h2 {
+            color: #fff;
+            margin-top: 0;
+        }
+        
+        .favicon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .favicon-item {
+            text-align: center;
+            padding: 15px;
+            background: #222;
+            border-radius: 8px;
+            border: 1px solid #444;
+        }
+        
+        .favicon-item img {
+            max-width: 64px;
+            max-height: 64px;
+            margin-bottom: 10px;
+        }
+        
+        .favicon-item .size {
+            font-size: 12px;
+            color: #888;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .status.success {
+            background: #4CAF50;
+            color: white;
+        }
+        
+        .status.warning {
+            background: #FF9800;
+            color: white;
+        }
+        
+        .status.error {
+            background: #F44336;
+            color: white;
+        }
+        
+        .code {
+            background: #222;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            border: 1px solid #444;
+        }
+        
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            padding: 8px 0;
+            border-bottom: 1px solid #333;
+        }
+        
+        .checklist li:last-child {
+            border-bottom: none;
+        }
+        
+        .checklist input[type="checkbox"] {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Favicon e PWA - Blackfy Marketplace</h1>
+        
+        <div class="section">
+            <h2>📱 Status dos Favicons</h2>
+            <div class="favicon-grid">
+                <div class="favicon-item">
+                    <img src="/favicon.ico" alt="Favicon ICO" onerror="this.style.display='none'">
+                    <div>favicon.ico</div>
+                    <div class="size">16x16, 32x32, 48x48</div>
+                    <span class="status success">✓ ICO</span>
+                </div>
+                
+                <div class="favicon-item">
+                    <img src="/favicon-16x16.png" alt="Favicon 16x16" onerror="this.style.display='none'">
+                    <div>favicon-16x16.png</div>
+                    <div class="size">16x16</div>
+                    <span class="status warning">⚠ PNG</span>
+                </div>
+                
+                <div class="favicon-item">
+                    <img src="/favicon-32x32.png" alt="Favicon 32x32" onerror="this.style.display='none'">
+                    <div>favicon-32x32.png</div>
+                    <div class="size">32x32</div>
+                    <span class="status warning">⚠ PNG</span>
+                </div>
+                
+                <div class="favicon-item">
+                    <img src="/favicon-192x192.png" alt="Favicon 192x192" onerror="this.style.display='none'">
+                    <div>favicon-192x192.png</div>
+                    <div class="size">192x192</div>
+                    <span class="status warning">⚠ PNG</span>
+                </div>
+                
+                <div class="favicon-item">
+                    <img src="/apple-touch-icon.png" alt="Apple Touch Icon" onerror="this.style.display='none'">
+                    <div>apple-touch-icon.png</div>
+                    <div class="size">180x180</div>
+                    <span class="status warning">⚠ PNG</span>
+                </div>
+                
+                <div class="favicon-item">
+                    <img src="/android-chrome-512x512.png" alt="Android Chrome 512x512" onerror="this.style.display='none'">
+                    <div>android-chrome-512x512.png</div>
+                    <div class="size">512x512</div>
+                    <span class="status warning">⚠ PNG</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📋 Checklist de Implementação</h2>
+            <ul class="checklist">
+                <li>
+                    <input type="checkbox" id="favicon-ico">
+                    <label for="favicon-ico">Criar favicon.ico (16x16, 32x32, 48x48)</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="favicon-pngs">
+                    <label for="favicon-pngs">Criar todos os favicons PNG (16x16, 32x32, 96x96, 192x192, 512x512)</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="apple-touch">
+                    <label for="apple-touch">Criar apple-touch-icon.png (180x180)</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="android-chrome">
+                    <label for="android-chrome">Criar android-chrome icons (192x192, 512x512)</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="manifest">
+                    <label for="manifest">Atualizar manifest.json com todos os ícones</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="html-tags">
+                    <label for="html-tags">Adicionar todas as meta tags no _document.jsx</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="test-browser">
+                    <label for="test-browser">Testar favicon no navegador</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="test-pwa">
+                    <label for="test-pwa">Testar instalação PWA</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="lighthouse">
+                    <label for="lighthouse">Executar audit Lighthouse PWA</label>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>🔧 Código HTML Necessário</h2>
+            <div class="code">
+&lt;!-- Favicon completo --&gt;
+&lt;link rel="icon" href="/favicon.ico" /&gt;
+&lt;link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" /&gt;
+&lt;link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" /&gt;
+&lt;link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" /&gt;
+&lt;link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" /&gt;
+&lt;link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png" /&gt;
+
+&lt;!-- Apple Touch Icon --&gt;
+&lt;link rel="apple-touch-icon" href="/apple-touch-icon.png" /&gt;
+
+&lt;!-- Android Chrome Icons --&gt;
+&lt;link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" /&gt;
+&lt;link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" /&gt;
+
+&lt;!-- Manifest PWA --&gt;
+&lt;link rel="manifest" href="/manifest.json" /&gt;
+
+&lt;!-- Theme Colors --&gt;
+&lt;meta name="theme-color" content="#000000" /&gt;
+&lt;meta name="msapplication-TileColor" content="#000000" /&gt;
+&lt;meta name="msapplication-TileImage" content="/favicon-192x192.png" /&gt;
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🛠️ Ferramentas Recomendadas</h2>
+            <ul>
+                <li><strong>Favicon.io</strong> - https://favicon.io/ (Gratuito, fácil de usar)</li>
+                <li><strong>RealFaviconGenerator</strong> - https://realfavicongenerator.net/ (Mais opções)</li>
+                <li><strong>Favicon Generator</strong> - https://www.favicon-generator.org/ (Simples)</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>📱 Teste PWA</h2>
+            <p>Para testar a funcionalidade PWA:</p>
+            <ol>
+                <li>Abra o Chrome DevTools (F12)</li>
+                <li>Vá para Application > Manifest</li>
+                <li>Verifique se não há erros</li>
+                <li>Teste "Add to homescreen"</li>
+                <li>Execute Lighthouse PWA audit</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script>
+        // Verificar se os favicons estão carregando
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.favicon-item img');
+            images.forEach(img => {
+                img.addEventListener('error', function() {
+                    this.parentElement.querySelector('.status').textContent = '✗ Missing';
+                    this.parentElement.querySelector('.status').className = 'status error';
+                });
+                
+                img.addEventListener('load', function() {
+                    this.parentElement.querySelector('.status').textContent = '✓ OK';
+                    this.parentElement.querySelector('.status').className = 'status success';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
