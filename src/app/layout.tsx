@@ -1,15 +1,15 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { DM_Sans } from 'next/font/google'
 import './globals.css'
 import { LanguageProvider } from '@/contexts/LanguageContext'
 import FaviconSwitcher from '@/components/FaviconSwitcher'
 import CookieConsentBanner from '@/components/CookieConsentBanner'
 import ThirdPartyScripts from '@/components/ThirdPartyScripts'
 
-const inter = Inter({
+const inter = DM_Sans({
   subsets: ['latin'],
   display: 'swap',
-  weight: ['400', '700'],
+  weight: ['400', '500', '700'],
   fallback: ['system-ui', 'Segoe UI', 'Roboto', 'Arial'],
   preload: true,
 })

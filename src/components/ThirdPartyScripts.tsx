@@ -28,6 +28,7 @@ export default function ThirdPartyScripts() {
 
   useEffect(() => {
     if (consent !== 'accepted') return
+    if (process.env.NEXT_PUBLIC_ENABLE_GTM !== 'true') return
     // Initialize dataLayer and Consent Mode (analytics only; ads denied)
     ;(window as any).dataLayer = (window as any).dataLayer || []
     ;(window as any).dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
@@ -54,7 +55,7 @@ export default function ThirdPartyScripts() {
     })(window as any, document, 'script', 'dataLayer', 'GTM-KWRX7DPL')
   }, [consent])
 
-  if (consent !== 'accepted') return null
+  if (consent !== 'accepted' || process.env.NEXT_PUBLIC_ENABLE_GTM !== 'true') return null
 
   return (
     <noscript>

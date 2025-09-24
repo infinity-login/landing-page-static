@@ -8,7 +8,7 @@ export default function CookieConsentBanner() {
   return (
     <CookieConsent
       buttonText="Aceitar"
-      declineButtonText="Recusar"
+      declineButtonText="Somente essenciais"
       enableDeclineButton
       onAccept={() => {
         try { localStorage.setItem(STORAGE_KEY, 'accepted') } catch {}
@@ -23,7 +23,7 @@ export default function CookieConsentBanner() {
       declineButtonStyle={{ background: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.3)', borderRadius: 8, padding: '8px 12px' }}
       contentStyle={{ margin: 0, textAlign: 'left' }}
     >
-      Usamos cookies para melhorar sua experiência e medir desempenho. Ao aceitar, carregaremos scripts de terceiros (GTM, Clarity) que podem definir cookies.
+      Usamos cookies essenciais para funcionamento e cookies de medição. Ao clicar em "Aceitar", carregaremos scripts de terceiros (ex.: Google Tag Manager) que podem definir cookies. Em "Somente essenciais", bloqueamos todos os de terceiros.
     </CookieConsent>
   )
 }
