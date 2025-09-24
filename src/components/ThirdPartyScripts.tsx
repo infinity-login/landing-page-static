@@ -29,6 +29,7 @@ export default function ThirdPartyScripts() {
   useEffect(() => {
     if (consent !== 'accepted') return
     if (process.env.NEXT_PUBLIC_ENABLE_GTM !== 'true') return
+    const load = () => {
     // Initialize dataLayer and Consent Mode (analytics only; ads denied)
     ;(window as any).dataLayer = (window as any).dataLayer || []
     ;(window as any).dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
@@ -53,6 +54,17 @@ export default function ThirdPartyScripts() {
       j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
       f.parentNode?.insertBefore(j, f);
     })(window as any, document, 'script', 'dataLayer', 'GTM-KWRX7DPL')
+    }
+    const idle = (window as any).requestIdleCallback
+      ? (window as any).requestIdleCallback(load)
+      : setTimeout(load, 0)
+    return () => {
+      if ((window as any).cancelIdleCallback) {
+        try { (window as any).cancelIdleCallback(idle) } catch {}
+      } else {
+        clearTimeout(idle as any)
+      }
+    }
   }, [consent])
 
   if (consent !== 'accepted' || process.env.NEXT_PUBLIC_ENABLE_GTM !== 'true') return null
