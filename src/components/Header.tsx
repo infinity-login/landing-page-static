@@ -23,12 +23,19 @@ export default function Header({ hideDownloadButton, showPlansButton = false, hi
   const { t, lang } = useTranslation()
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
+    let ticking = false
+    const onScroll = () => {
+      if (ticking) return
+      ticking = true
+      requestAnimationFrame(() => {
+        const scrolled = window.scrollY > 50
+        setIsScrolled(prev => (prev === scrolled ? prev : scrolled))
+        ticking = false
+      })
     }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   const scrollToSection = (sectionId: string) => {

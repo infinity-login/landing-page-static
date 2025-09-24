@@ -1,0 +1,46 @@
+{
+  "name": "Blackfy Login",
+  "short_name": "Blackfy",
+  "description": "Sistema avançado de navegação multi‑perfil com tecnologia antidetecção. Privacidade total para profissionais exigentes.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0b0b",
+  "theme_color": "#0b0b0b",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32 48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/favicon-16x16.svg",
+      "sizes": "16x16",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "32x32 64x64",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/favicon-192x192.svg",
+      "sizes": "180x180 192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["utilities", "productivity", "privacy"],
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "screenshots": []
+}
