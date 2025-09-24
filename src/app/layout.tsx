@@ -45,11 +45,6 @@ export default function RootLayout({
     <html lang="pt-BR">
       <head>
         <FaviconSwitcher />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-        <link rel="preload" as="image" href="/images/favicon-192x192.svg" type="image/svg+xml" imageSrcSet="/images/favicon-192x192.svg 1x" />
       </head>
       <body className={`${inter.className} bg-black text-white`}>
         <LanguageProvider>
