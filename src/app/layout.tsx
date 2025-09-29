@@ -38,12 +38,12 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Blackfy Login - Múltiplos Perfis",
-    description: "Baixe o Blackfy - Sistema avançado de navegação multi-perfil;",
+    description: "Baixe o Blackfy - Sistema avançado de navegação multi-perfil",
     url: "https://login.blackfy.tech",
     siteName: "Blackfy",
     images: [
       {
-        url: "https://login.blackfy.tech/images/og-blackfy-login.jpg",
+        url: "/images/og-blackfy-login.jpg",
         width: 1200,
         height: 630,
         alt: "Blackfy - Soluções Tecnológicas em Marketing Digital",
@@ -55,8 +55,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Blackfy Login - Múltiplos Perfis",
-    description: "Baixe o Blackfy - Sistema avançado de navegação multi-perfil;",
-    images: ["https://login.blackfy.tech/images/og-blackfy-login.jpg"],
+    description: "Baixe o Blackfy - Sistema avançado de navegação multi-perfil",
+    images: ["/images/og-blackfy-login.jpg"],
     creator: "@blackfy",
     site: "@blackfy",
   },
@@ -111,6 +111,23 @@ export default function RootLayout({
     <html lang="pt-BR">
       <head>
         <FaviconSwitcher />
+        {/* Explicit Open Graph meta tags for better compatibility */}
+        <meta property="og:title" content="Blackfy Login - Múltiplos Perfis" />
+        <meta property="og:description" content="Baixe o Blackfy - Sistema avançado de navegação multi-perfil" />
+        <meta property="og:image" content="/images/og-blackfy-login.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:url" content="https://login.blackfy.tech" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Blackfy" />
+        
+        {/* Twitter Card meta tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Blackfy Login - Múltiplos Perfis" />
+        <meta name="twitter:description" content="Baixe o Blackfy - Sistema avançado de navegação multi-perfil" />
+        <meta name="twitter:image" content="/images/og-blackfy-login.jpg" />
+        <meta name="twitter:creator" content="@blackfy" />
+        <meta name="twitter:site" content="@blackfy" />
       </head>
       <body className={`${inter.className} bg-black text-white`}>
         <LanguageProvider>
