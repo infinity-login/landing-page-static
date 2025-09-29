@@ -56,7 +56,7 @@ export default function Header({ hideDownloadButton, showPlansButton = false, hi
             {disableLogoLink ? (
               <div className="w-36 h-12 flex items-center relative select-none cursor-default">
                 <Image
-                  src="/images/logotipo.png"
+                  src="/LOGIN.svg"
                   alt="Blackfy Logo"
                   width={144}
                   height={48}
@@ -67,7 +67,7 @@ export default function Header({ hideDownloadButton, showPlansButton = false, hi
               <Link href="/">
                 <div className="w-36 h-12 flex items-center relative cursor-pointer">
                   <Image
-                    src="/images/logotipo.png"
+                    src="/LOGIN.svg"
                     alt="Blackfy Logo"
                     width={144}
                     height={48}
