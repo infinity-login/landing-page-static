@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     siteName: "Blackfy",
     images: [
       {
-        url: "https://blackfy.tech/images/og-blackfy-institucional.jpg",
+        url: "https://blackfy.tech/images/og-blackfy-login.jpg",
         width: 1200,
         height: 630,
         alt: "Blackfy - Soluções Tecnológicas em Marketing Digital",
