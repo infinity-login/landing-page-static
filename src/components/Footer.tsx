@@ -27,7 +27,7 @@ export default function Footer() {
             <div className="flex items-center space-x-2 mb-2">
               <div className="w-36 h-16 relative">
                 <Image
-                  src="/images/logotipo.png"
+                  src="/LOGIN.svg"
                   alt="Blackfy Logo"
                   width={144}
                   height={64}
@@ -46,37 +46,37 @@ export default function Footer() {
 
           {/* Produto */}
           {!(isThankYouPage || isInfoPage) && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="space-y-4 md:col-start-2 md:col-end-3 md:order-2 md:justify-self-end"
-          >
-            <h3 className="text-lg font-semibold text-white">{t('footer_product')}</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#recursos" className="text-gray-300 hover:text-white transition-colors text-sm">
-                  {t('footer_link_features')}
-                </a>
-              </li>
-              <li>
-                <a href="#beneficios" className="text-gray-300 hover:text-white transition-colors text-sm">
-                  {t('footer_link_benefits')}
-                </a>
-              </li>
-              <li>
-                <a href="#video" className="text-gray-300 hover:text-white transition-colors text-sm">
-                  {t('footer_link_demo')}
-                </a>
-              </li>
-              <li>
-                <a href="#faq" className="text-gray-300 hover:text-white transition-colors text-sm">
-                  {t('footer_link_faq')}
-                </a>
-              </li>
-            </ul>
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="space-y-4 md:col-start-2 md:col-end-3 md:order-2 md:justify-self-end"
+            >
+              <h3 className="text-lg font-semibold text-white">{t('footer_product')}</h3>
+              <ul className="space-y-2">
+                <li>
+                  <a href="#recursos" className="text-gray-300 hover:text-white transition-colors text-sm">
+                    {t('footer_link_features')}
+                  </a>
+                </li>
+                <li>
+                  <a href="#beneficios" className="text-gray-300 hover:text-white transition-colors text-sm">
+                    {t('footer_link_benefits')}
+                  </a>
+                </li>
+                <li>
+                  <a href="#video" className="text-gray-300 hover:text-white transition-colors text-sm">
+                    {t('footer_link_demo')}
+                  </a>
+                </li>
+                <li>
+                  <a href="#faq" className="text-gray-300 hover:text-white transition-colors text-sm">
+                    {t('footer_link_faq')}
+                  </a>
+                </li>
+              </ul>
+            </motion.div>
           )}
 
           {/* Contato */}
@@ -96,17 +96,17 @@ export default function Footer() {
                 </a>
               </li>
               {lang === 'pt' && (
-              <li className="flex items-center space-x-3">
-                <Phone className="w-4 h-4 text-white" />
-                <a
-                  href="https://wa.me/5534984296807?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20tirar%20algumas%20d%C3%BAvidas."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition-colors text-sm"
-                >
-                  {t('footer_phone')}
-                </a>
-              </li>
+                <li className="flex items-center space-x-3">
+                  <Phone className="w-4 h-4 text-white" />
+                  <a
+                    href="https://wa.me/5534984296807?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20tirar%20algumas%20d%C3%BAvidas."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-300 hover:text-white transition-colors text-sm"
+                  >
+                    {t('footer_phone')}
+                  </a>
+                </li>
               )}
               <li className="flex items-center space-x-3">
                 <MapPin className="w-4 h-4 text-white" />
