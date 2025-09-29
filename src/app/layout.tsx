@@ -17,7 +17,64 @@ const inter = DM_Sans({
 
 export const metadata: Metadata = {
   title: "Blackfy Login - Múltiplos Perfis",
-  description: "Baixe o Blackfy - Sistema avançado de navegação multi-perfil",
+  description: "Baixe o Blackfy - Sistema avançado de navegação multi-perfil.",
+  keywords: "marketing digital, cloaker, Blackfy, campanhas, segurança, navegação multi-perfil, soluções tecnológicas",
+  authors: [{ name: "Blackfy" }],
+  creator: "Blackfy",
+  publisher: "Blackfy",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://login.blackfy.tech"),
+  alternates: {
+    canonical: "https://login.blackfy.tech",
+    languages: {
+      "pt-BR": "https://login.blackfy.tech",
+      "en-US": "https://login.blackfy.tech/en",
+      "es-ES": "https://login.blackfy.tech/es",
+    },
+  },
+  openGraph: {
+    title: "Blackfy Login - Múltiplos Perfis",
+    description: "Baixe o Blackfy - Sistema avançado de navegação multi-perfil;",
+    url: "https://login.blackfy.tech",
+    siteName: "Blackfy",
+    images: [
+      {
+        url: "https://blackfy.tech/images/og-blackfy-institucional.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Blackfy - Soluções Tecnológicas em Marketing Digital",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blackfy Login - Múltiplos Perfis",
+    description: "Baixe o Blackfy - Sistema avançado de navegação multi-perfil;",
+    images: ["https://blackfy.tech/images/og-blackfy-login.jpg"],
+    creator: "@blackfy",
+    site: "@blackfy",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  category: "technology",
+  classification: "Business",
   manifest: "/manifest.json",
   icons: {
     icon: [
@@ -33,6 +90,15 @@ export const metadata: Metadata = {
       },
     ],
     shortcut: [{ url: "/favicon.ico" }],
+  },
+  other: {
+    "msapplication-TileColor": "#0b0b0b",
+    "theme-color": "#0b0b0b",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "black-translucent",
+    "apple-mobile-web-app-title": "Blackfy",
+    "application-name": "Blackfy",
+    "mobile-web-app-capable": "yes",
   },
 }
 
