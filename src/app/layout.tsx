@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     siteName: "Blackfy",
     images: [
       {
-        url: "https://blackfy.tech/images/og-blackfy-login.jpg",
+        url: "https://login.blackfy.tech/images/og-blackfy-login.jpg",
         width: 1200,
         height: 630,
         alt: "Blackfy - Soluções Tecnológicas em Marketing Digital",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Blackfy Login - Múltiplos Perfis",
     description: "Baixe o Blackfy - Sistema avançado de navegação multi-perfil;",
-    images: ["https://blackfy.tech/images/og-blackfy-login.jpg"],
+    images: ["https://login.blackfy.tech/images/og-blackfy-login.jpg"],
     creator: "@blackfy",
     site: "@blackfy",
   },
