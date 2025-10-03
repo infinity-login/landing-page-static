@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black">
       <Header />
-      <Hero showVideoButton={true} />
+      <Hero showVideoButton={false} />
       <VideoSection />
       <Features />
       <Benefits />
